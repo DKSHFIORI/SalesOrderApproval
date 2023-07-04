@@ -1,0 +1,110 @@
+/* Enter your custom styles here */
+/*div.sapMTabContainer.noCloseButtons > .sapMTabStripContainer > .sapMTabStrip > .sapMTSTabsContainer > .sapMTSTabs > .sapMTabStripItem > .sapMTSItemCloseBtnCnt {
+  visibility: hidden;
+  color : white;
+}*/
+
+/* custom TabContainerItem (unselected) */
+.tabContainer 
+.sapMTabStrip 
+.sapMTSTabsContainer 
+.sapMTSTabs 
+.sapMTabStripItem {
+    color : black;
+    background-color:white;
+    font-weight: bold;
+    margin-right: 14px;
+    display:block;
+    margin-bottom:20px;
+}
+
+.infoTable{
+	background: white !important;	
+}
+	/*margin-top:2%;*/
+.titlecolor{
+	background: #cf0415 !important;
+	color: white !important;
+	font-weight: bold;
+	height:2rem !important;
+}
+
+.fontdesign{
+	color: white !important;
+	text-align:center;
+}
+
+.setAlignment{
+	text-align:Begin;
+}
+
+.newBtn .sapMBtnInner {
+    height: 4rem; /* Increase it to 6rem */
+}
+.newBtn .sapMBtnText>.sapMBtnIcon {
+   display: contents;
+   line-height: 5.8rem; /* Add this line when you are using height as 6rem */
+}
+.newBtn .sapMBtnInner.sapMBtnText {
+	padding-left: 0.75rem;
+}    
+.newBtn .sapMBtnIcon { 
+   font-size: 2.5rem;   /* Icon size */
+}
+.newBtn .sapMBtnContent {
+    line-height: normal;
+}
+
+.headerButton{
+	cursor:pointer;
+}
+
+.adjustFontSize{
+	font-size: 1.5rem;
+	color: black;
+}
+
+.footerdesign{
+	background:#cf0415 !important;
+}
+
+/*.sapMFooter-CTX {*/
+/*  background-color: #32363a !important;*/
+/*  color: white !important;*/*/
+/*}*/
+
+.Text{
+	text-Align: right !important;
+}
+
+/*.sapMBtnInner{*/
+/*	color: black !important;*/
+/*}*/
+
+.bold{
+	font-weight: bold !important;
+}
+
+.width2{
+	width: "100%" !important;
+}
+
+.buttonColor{
+	background-color: white !important;
+	margin-top: 0.8rem !important;
+	margin-bottom: 0.4rem !important;
+}
+
+.EnlargeSearchField 
+{
+	padding: 0 !important;
+}
+
+.roundborder{
+	display: block !important;
+	border: 1px solid lightgrey !important;
+	border-radius: 1px !important;
+	box-shadow: 1px 2px lightgrey;
+}
+
+
