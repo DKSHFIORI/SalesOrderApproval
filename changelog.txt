@@ -1,0 +1,21 @@
+********************************************************************************** 
+*  RICEF ID: -
+*  Program Description: SO Workflow Approval YSD_WA_WRKFLAPP 
+********************************************************************************** 
+*  Name         Date        Description                      			Change ID		
+*  ------------ ---------- -------------------------------------------  ---------- 
+1. YUHANG       29/04/2022  initial development app                     FD0K900094
+2. YUHANG		10/05/2022	Fix the bug of different version 			FD0K900094
+3. YUHANG		14/11/2022	Change Price label to Item Net Price		FD0K900112
+							Add new field Unit Price in the table		
+							SODetail.view.xml
+4. YICHENG		24/5/2023   Add unit after quantity						D00K9F5AQ4
+							Add thousand format
+							SODetail.view.xml
+********************************************************************************** 
+********************************************************************************** 
+*  Notes:
+1. First  TR: FD0K900094
+2. Second TR: FD0K900112
+3. Third TR:  D00K9F5AQ4
+**********************************************************************************

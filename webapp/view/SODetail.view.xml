@@ -1,0 +1,286 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	height="100%"
+	controllerName="ysd.wa.wrkflapp.YSD_WA_WRKFLAPP.controller.SODetail"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:uxap="sap.uxap"
+	xmlns:core="sap.ui.core">
+	<Page 
+		id="DetailPage"
+		showHeader="true"
+		title="{i18n>SalesOrderDetail}"
+		class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+		<content>
+			<!--Mobile View-->
+			<uxap:ObjectPageLayout
+						id="MobileDetailPage"
+						upperCaseAnchorBar="false">
+				<uxap:headerTitle>
+					<uxap:ObjectPageHeader
+								id="DetailHeader"
+								objectTitle=""
+								objectSubtitle=""
+								isActionAreaAlwaysVisible="true">
+					</uxap:ObjectPageHeader>
+				</uxap:headerTitle>
+				<uxap:headerContent>
+					<VBox id="MobileViewDetail2">
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Text id="MobileSalesArea" text=""/>
+						</FlexBox>
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Text id="MobileCustomerName" text=""/>
+						</FlexBox>
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Text id="MobilePO" text=""/>
+						</FlexBox>
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Text id="MobileRequiredDeliveryDate" text=""/>
+						</FlexBox>
+					</VBox>
+					
+					<core:HTML content='&lt;hr/&gt;' />
+					
+					<!--<VBox id="MobileViewDetail">-->
+					<FlexBox width="100%" direction="Column">
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Label text="{i18n>DocumentCurrency}" />
+							<Text id="MobileDocumentCurrency" text=""/>
+						</FlexBox>
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Label text="{i18n>TotalAmountExclVAT}" />
+							<Text id="MobileTotalAmtExclVAT" text=""/>
+						</FlexBox>
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Label text="{i18n>VAT}" />
+							<Text id="MobileVAT" text=""/>
+						</FlexBox>
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Label text="{i18n>TotalAmountInclVAT}" />
+							<Text id="MobileTotalAmtInclVAT" text=""/>
+						</FlexBox>
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Label text="{i18n>GM1%}" />
+							<Text id="MobileGM1Perc" text=""/>
+						</FlexBox>
+					</FlexBox>
+				</uxap:headerContent>
+				<uxap:sections>
+					<uxap:ObjectPageSection titleUppercase="false" title="Materials">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection titleUppercase="false">
+								<uxap:blocks>
+									<Table id="Mobile_MaterialTable" class="sapUxAPObjectPageSubSectionAlignContent sapUiResponsiveMargin" width="auto" items="{/}">
+										<columns>
+											<Column>
+												<Text text="{i18n>MaterialDescription}" />
+											</Column>
+											
+											<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="{i18n>MaterialNumber}" />
+											</Column>
+											<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="{i18n>MaterialGroup}" />
+											</Column>
+											
+											<Column  minScreenWidth="Tablet" demandPopin="true">
+												<Text text="{i18n>Price}" />
+											</Column>
+											<Column  minScreenWidth="Tablet" demandPopin="true">
+												<Text text="{i18n>GM1}" />
+											</Column>
+											<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="{i18n>GM1%}" />
+											</Column>
+											<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="{i18n>UnitPrice}" />
+											</Column>
+											<Column hAlign="End">
+												<Text text="{i18n>Quantity}" />
+											</Column>
+										</columns>
+		
+										<items>
+											<ColumnListItem>
+												<Title text="{MaterialDescription}" class="bold" />
+												<Text text="{Material}" />
+												<Text text="{MaterialGroup}"  />
+												<Text text="{PriceFormatted}" />				<!--Begin of D00K9F5AQ4-->
+												<Text text="{Gm1Formatted}" />					<!--Begin of D00K9F5AQ4-->
+												<Text text="{Gm1Percent}" />
+												<Text text="{UnitPriceFormatted}" />			<!--Begin of D00K9F5AQ4-->
+												<Text text="{QuantityFormatted}" />				<!--Begin of D00K9F5AQ4-->
+											</ColumnListItem>
+										</items>
+									</Table>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+				</uxap:sections>
+			</uxap:ObjectPageLayout>
+			<VBox class="sapUiSmallMargin" id="DesktopHeaderDetail">
+				 <FlexBox class="sapUiLargeMargin"	direction="Column" alignItems="Start">
+					<FlexBox alignItems="Start" justifyContent="Start" height="25px">
+						<Label text="{i18n>SalesOrganization}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="SalesOrganization" text="" width="400px"/>
+						
+						<Label text="{i18n>SalesEmployee}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="SalesEmployee" text="" />
+					</FlexBox>
+					
+					<FlexBox alignItems="Start" justifyContent="Start" height="25px">
+							<Label text="{i18n>Division}" width="150px" /> 
+							<Label text=":" class="sapUiTinyMarginEnd" />
+							<Text id="Division" text="" width="400px"/>
+							
+							<Label text="{i18n>OrderType}" width="150px" /> 
+							<Label text=":" class="sapUiTinyMarginEnd" />
+							<Text id="OrderType" text="" />
+					</FlexBox>
+					
+					<FlexBox alignItems="Start" justifyContent="Start" height="25px">
+						<Label text="{i18n>SOCreator}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="SOCreator" text="" width="400px"/>
+						
+						<Label text="{i18n>SalesArea}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="SalesArea" text="" />
+					</FlexBox>
+					
+					
+					<FlexBox alignItems="Start" justifyContent="Start" height="25px">
+						<Label text="{i18n>SODate}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="SODate" text="" width="400px"/>
+						
+						<Label text="{i18n>RequiredDeliveryDate}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="RequiredDeliveryDate" text="" />
+					</FlexBox>
+					
+					<FlexBox alignItems="Start" justifyContent="Start" height="25px">
+						<Label text="{i18n>SONumber}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="SONumber" text="" width="400px"/>
+						
+						<Label text="{i18n>DocumentCurrency}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="DocumentCurrency" text="" textAlign="End"/>
+						<!-- 
+						<Label text="{i18n>TotalAmountExclVAT}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="TotalAmountExclVAT" text="" textAlign="End"/>
+						-->
+					</FlexBox>
+					
+					<FlexBox alignItems="Start" justifyContent="Start" height="25px">
+						<Label text="{i18n>CustomerCode}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="CustomerCode" text="" width="400px"/>
+						
+						<Label text="{i18n>TotalAmountExclVAT}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="TotalAmountExclVAT" text="" textAlign="End"/>
+					</FlexBox>
+					
+					<FlexBox alignItems="Start" justifyContent="Start" height="25px">
+						<Label text="{i18n>CustomerName}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="CustomerName" text="" width="400px"/>
+						
+						<Label text="{i18n>VAT}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="VAT" text="" class="Text" textAlign="End"/>
+					</FlexBox>
+					
+					<FlexBox alignItems="Start" justifyContent="Start" height="25px">
+						<Label text="{i18n>PONumber}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="PONumber" text="" width="400px"/>
+						
+						<Label text="{i18n>TotalAmountInclVAT}" width="150px" />
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="TotalAmountInclVAT" text="" />
+					</FlexBox>
+					
+					<FlexBox alignItems="Start" justifyContent="Start" height="25px">
+						<Label text="" width="150px" /> 
+						<Label text="" class="sapUiTinyMarginEnd" />
+						<Text  text="" width="405px"/>
+						
+						<Label text="{i18n>GM1%}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="GM1Perc" text="" />
+					</FlexBox>
+					
+					
+				</FlexBox>
+			</VBox>
+			
+			<VBox class="sapUiSmallMargin" id="DesktopTableDetail">
+				<Table id="Material_table"  class="sapUiResponsiveMargin" width="auto" items="{/}">
+					<columns>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>MaterialGroup}"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>Material}"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>MaterialDescription}" />
+						</Column>
+						
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>Quantity}"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>UnitPrice}" />
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>Price}"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>GM1}" />
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>GM1%}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{MaterialGroup}" />
+								<Text text="{Material}" />
+								<Text text="{MaterialDescription}" />
+								<Text text="{QuantityFormatted}" />					<!--Begin of D00K9F5AQ4-->
+								<Text text="{UnitPriceFormatted}" />				<!--Begin of D00K9F5AQ4-->
+								<Text text="{PriceFormatted}" />					<!--Begin of D00K9F5AQ4-->
+								<Text text="{Gm1Formatted}" />						<!--Begin of D00K9F5AQ4-->
+								<Text text="{Gm1Percent}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</content>
+		<footer >
+			<Toolbar>
+					<ToolbarSpacer/>
+					<Button id="Approve"   text="Approve" press="PressApprove" type="Emphasized" />
+					<Button id="MoreInfo"  text="Email SO Creator"  press="SendEmail" type="Accept"/>
+					<Button id="Reject"    text="Reject" press="PressReject" type="Reject"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
+
+	
