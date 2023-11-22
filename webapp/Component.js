@@ -25,6 +25,10 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+
+			//<<Start of C001 set UI Model
+			this.setModel(models.createUIModel(), "uiModel");
+			//End of C001
 		}
 	});
 });

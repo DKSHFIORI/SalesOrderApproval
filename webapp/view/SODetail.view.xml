@@ -211,16 +211,34 @@
 						<Label text=":" class="sapUiTinyMarginEnd" />
 						<Text id="TotalAmountInclVAT" text="" />
 					</FlexBox>
-					
+					<!--<<Start of adding XISAIAHT 17-Nov-23 CHN-2835 -->
 					<FlexBox alignItems="Start" justifyContent="Start" height="25px">
-						<Label text="" width="150px" /> 
-						<Label text="" class="sapUiTinyMarginEnd" />
-						<Text  text="" width="405px"/>
-						
+						<Label text="{i18n>Incoterms}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text  id="idIncotermsText" text="" width="400px"/>
+					<!-->>End of adding XISAIAHT 17-Nov-23 CHN-2835 -->		
 						<Label text="{i18n>GM1%}" width="150px" /> 
 						<Label text=":" class="sapUiTinyMarginEnd" />
 						<Text id="GM1Perc" text="" />
 					</FlexBox>
+
+					<!--<<Start of adding XISAIAHT 17-Nov-23 CHN-2835 -->
+					<FlexBox alignItems="Start" justifyContent="Start" height="25px"> 
+						<Label text="{i18n>IncotermsLoc}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text  id="idIncotermsLocText" text="" width="400px"/>
+
+						<Label text="{i18n>PaymentTerm}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<Text id="idPaymentTermText" text="" />
+				    </FlexBox>
+
+					<FlexBox alignItems="Start" justifyContent="Start" height="100px">
+						<Label text="{i18n>Remarks}" width="150px" /> 
+						<Label text=":" class="sapUiTinyMarginEnd" />
+						<TextArea id="idRemarksTextArea" value="" height="100px" width="400px"/>
+					</FlexBox>	
+					<!-->>End of adding XISAIAHT 17-Nov-23 CHN-2835 -->
 					
 					
 				</FlexBox>
@@ -249,11 +267,28 @@
 							<Text text="{i18n>Price}"/>
 						</Column>
 						<Column minScreenWidth="Desktop" demandPopin="true">
-							<Text text="{i18n>GM1}" />
+							<!--<<Start of C001 dynamic text-->
+							<Text text="{uiModel>/GM1Label}" />
+							<!-- <Text text="{i18n>GM1}" /> -->
+							<!-- End of C001 -->
 						</Column>
 						<Column minScreenWidth="Desktop" demandPopin="true">
-							<Text text="{i18n>GM1%}"/>
+							<!--<<Start of C001 dynamic text-->
+							<Text text="{uiModel>/GM1PLabel}" />
+							<!-- <Text text="{i18n>GM1%}"/> -->
+							<!-- End of C001 -->
 						</Column>
+						<!--<<Start of C001 Add the extended columns-->
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>FirstDate}" />
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>DeliveryStatus}" />
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>RejectionCode}" />
+						</Column>
+						<!-- End of C001 -->
 					</columns>
 					<items>
 						<ColumnListItem>
@@ -266,6 +301,18 @@
 								<Text text="{PriceFormatted}" />					<!--Begin of D00K9F5AQ4-->
 								<Text text="{Gm1Formatted}" />						<!--Begin of D00K9F5AQ4-->
 								<Text text="{Gm1Percent}" />
+								<!--<<Start of C001-->
+								<Text text="{
+									path : 'FirstDate',
+									type: 'sap.ui.model.type.Date',
+									formatOptions : { 
+										pattern: 'dd.MM.yyyy'
+									}
+								 }" 
+								/>
+								<Text text="{DeliveryStatus}" />
+								<Text text="{RejectionCode}" />
+								<!-- End of C001 -->
 							</cells>
 						</ColumnListItem>
 					</items>

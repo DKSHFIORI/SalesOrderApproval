@@ -1,0 +1,19 @@
+{
+  "deployer": {
+    "type": "Gateway",
+    "options": {
+      "conn": {
+        "server": "https://kulhdb01d.dksh.com:44300",
+        "client": "100"
+      },
+      "ui5": {
+        "language": "EN",
+        "package": "YCA_FIORI",
+        "bspcontainer": "YSD_WA_WRKFLAPP",
+        "bspcontainer_text": "SO Workflow Approval",
+        "calc_appindex": true,
+        "transportno": "D00K9F5RTC"
+      }
+    }
+  }
+}

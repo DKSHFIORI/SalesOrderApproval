@@ -1,148 +1,149 @@
 {
-	"_version": "1.12.0",
-	"sap.app": {
-		"id": "ysd.wa.wrkflapp.YSD_WA_WRKFLAPP",
-		"type": "application",
-		"i18n": "i18n/i18n.properties",
-		"applicationVersion": {
-			"version": "1.0.0"
-		},
-		"title": "{{appTitle}}",
-		"description": "{{appDescription}}",
-		"sourceTemplate": {
-			"id": "servicecatalog.connectivityComponentForManifest",
-			"version": "0.0.0"
-		},
-		"dataSources": {
-			"YSD_SO_WORKFLOW_APPV_SRV": {
-				"uri": "/sap/opu/odata/sap/YSD_SO_WORKFLOW_APPV_SRV/",
-				"type": "OData",
-				"settings": {
-					"localUri": "localService/YSD_SO_WORKFLOW_APPV_SRV/metadata.xml"
-				}
-			}
-		}
-	},
-	"sap.ui": {
-		"technology": "UI5",
-		"icons": {
-			"icon": "",
-			"favIcon": "",
-			"phone": "",
-			"phone@2": "",
-			"tablet": "",
-			"tablet@2": ""
-		},
-		"deviceTypes": {
-			"desktop": true,
-			"tablet": true,
-			"phone": true
-		}
-	},
-	"sap.ui5": {
-		"flexEnabled": false,
-		"rootView": {
-			"viewName": "ysd.wa.wrkflapp.YSD_WA_WRKFLAPP.view.App",
-			"type": "XML",
-			"async": true,
-			"id": "App"
-		},
-		"dependencies": {
-			"minUI5Version": "1.65.6",
-			"libs": {
-				"sap.ui.layout": {},
-				"sap.ui.core": {},
-				"sap.m": {}
-			}
-		},
-		"contentDensities": {
-			"compact": true,
-			"cozy": true
-		},
-		"models": {
-			"i18n": {
-				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
-					"bundleName": "ysd.wa.wrkflapp.YSD_WA_WRKFLAPP.i18n.i18n"
-				}
-			},
-			"YSD_SO_WORKFLOW_APPV_SRV": {
-				"type": "sap.ui.model.odata.v2.ODataModel",
-				"settings": {
-					"defaultOperationMode": "Server",
-					"defaultBindingMode": "OneWay",
-					"defaultCountMode": "Request"
-				},
-				"dataSource": "YSD_SO_WORKFLOW_APPV_SRV",
-				"preload": true
-			}
-		},
-		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
-		},
-		"routing": {
-			"config": {
-				"routerClass": "sap.m.routing.Router",
-				"viewType": "XML",
-				"async": true,
-				"viewPath": "ysd.wa.wrkflapp.YSD_WA_WRKFLAPP.view",
-				"controlAggregation": "pages",
-				"controlId": "app",
-				"clearControlAggregation": false
-			},
-			"routes": [
-				{
-					"name": "RouteApp",
-					"pattern": "RouteApp",
-					"target": [
-						"TargetApp"
-					]
-				},
-				{
-					"name": "Dashboard",
-					"pattern": "",
-					"target": "Dashboard"
-				},
-				{
-					"name": "SODetail",
-					"pattern": "SODetail",
-					"target": "SODetail"
-				},
-				{
-					"name": "SODetailEmail",
-					"pattern": "SODetail/{Guid}",
-					"target": [
-						"SODetail"
-					]
-				}
-			],
-			"targets": {
-				"TargetApp": {
-					"viewType": "XML",
-					"transition": "slide",
-					"clearControlAggregation": false,
-					"viewId": "App",
-					"viewName": "App"
-				},
-				"Dashboard": {
-					"viewId": "Dashboard",
-					"viewName": "Dashboard",
-					"viewLevel": 1
-				},
-				"SODetail": {
-					"viewId": "SODetail",
-					"viewName": "SODetail",
-					"viewLevel": 2
-				}
-			}
-		}
-	},
-	"sap.platform.abap": {
-		"uri": "/sap/bc/ui5_ui5/sap/ysd_wa_wrkflapp/webapp",
-		"_version": "1.1.0"
-	}
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "ysd.wa.wrkflapp.YSD_WA_WRKFLAPP",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0",
+            "toolsId": "3a1442cc-fb80-4ee1-b440-3dbf89b871c5"
+        },
+        "dataSources": {
+            "YSD_SO_WORKFLOW_APPV_SRV": {
+                "uri": "/sap/opu/odata/sap/YSD_SO_WORKFLOW_APPV_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/YSD_SO_WORKFLOW_APPV_SRV/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "ysd.wa.wrkflapp.YSD_WA_WRKFLAPP.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.ui.layout": {},
+                "sap.ui.core": {},
+                "sap.m": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "ysd.wa.wrkflapp.YSD_WA_WRKFLAPP.i18n.i18n"
+                }
+            },
+            "YSD_SO_WORKFLOW_APPV_SRV": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "YSD_SO_WORKFLOW_APPV_SRV",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "ysd.wa.wrkflapp.YSD_WA_WRKFLAPP.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteApp",
+                    "pattern": "RouteApp",
+                    "target": [
+                        "TargetApp"
+                    ]
+                },
+                {
+                    "name": "Dashboard",
+                    "pattern": "",
+                    "target": "Dashboard"
+                },
+                {
+                    "name": "SODetail",
+                    "pattern": "SODetail",
+                    "target": "SODetail"
+                },
+                {
+                    "name": "SODetailEmail",
+                    "pattern": "SODetail/{Guid}",
+                    "target": [
+                        "SODetail"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetApp": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "App",
+                    "viewName": "App"
+                },
+                "Dashboard": {
+                    "viewId": "Dashboard",
+                    "viewName": "Dashboard",
+                    "viewLevel": 1
+                },
+                "SODetail": {
+                    "viewId": "SODetail",
+                    "viewName": "SODetail",
+                    "viewLevel": 2
+                }
+            }
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/ysd_wa_wrkflapp/webapp",
+        "_version": "1.1.0"
+    }
 }

@@ -200,11 +200,15 @@ sap.ui.define([
 			t.getView().byId("MobileVAT").setText(arrData[0].VatAmtFormatted);							//Begin of D00K9F5AQ4
 			t.getView().byId("MobileTotalAmtInclVAT").setText(arrData[0].TotalAmountInVatFormatted);	//Begin of D00K9F5AQ4
 			t.getView().byId("MobileGM1Perc").setText(arrData[0].Gm1Percent);
+
 		},
 		
 		displayDesktopHeaderContent: function(arrData){
-			
+			//<<Start of C001 (READ.md)
+			let orderTypeGM, sPath, vFirstDate;
+			//End of C001
 			var t = this;
+			
 			t.getView().byId("SalesOrganization").setText(arrData[0].SalesOrganization);
 			t.getView().byId("SalesEmployee").setText(arrData[0].SalesEmployee);
 			t.getView().byId("Division").setText(arrData[0].Division);
@@ -224,6 +228,33 @@ sap.ui.define([
 			t.getView().byId("TotalAmountInclVAT").setText(arrData[0].TotalAmountInVatFormatted);		//Begin of D00K9F5AQ4
 			t.getView().byId("PONumber").setText(arrData[0].PurchaseOrder);
 			t.getView().byId("GM1Perc").setText(arrData[0].Gm1Percent);
+			//<<Start of C001 (READ.md)
+			t.getView().byId("idIncotermsText").setText(arrData[0].Incoterms);
+			t.getView().byId("idIncotermsLocText").setText(arrData[0].IncotermsLoc1);
+			t.getView().byId("idPaymentTermText").setText(arrData[0].PaymentTerm);
+			t.getView().byId("idRemarksTextArea").setValue(arrData[0].Remarks);
+			//Update Format of First date
+			// vFirstDate = t.getOwnerComponent().getModel().setProperty("/FirstDate", )
+
+			// this.DateFormat().format(arrData[0].RequiredDelivDate)
+			
+
+			orderTypeGM = this.getOwnerComponent().getModel("uiModel"); 
+
+			//Update Column Header
+			if (orderTypeGM) {
+				try{
+					let checkType = orderTypeGM.getProperty("/GMText/" + arrData[0].OrderType.toString());
+					if(!checkType){
+						orderTypeGM = orderTypeGM.getProperty("/GMText/DEFAULT");
+					}
+					this.getOwnerComponent().getModel("uiModel").setProperty("/GM1Label", orderTypeGM.GM1);
+					this.getOwnerComponent().getModel("uiModel").setProperty("/GM1PLabel", orderTypeGM.GM1_P);
+				}catch(error){
+					console.log(error);
+				}
+			}
+			//End of C001
 		},
 		displayMobileTableContent: function(arrData){
 			var oTable = this.getView().byId("Mobile_MaterialTable");
