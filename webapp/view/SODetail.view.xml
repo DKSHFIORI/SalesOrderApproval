@@ -216,8 +216,9 @@
 						<Label text="{i18n>Incoterms}" width="150px" /> 
 						<Label text=":" class="sapUiTinyMarginEnd" />
 						<Text  id="idIncotermsText" text="" width="400px"/>
-					<!-->>End of adding XISAIAHT 17-Nov-23 CHN-2835 -->		
-						<Label text="{i18n>GM1%}" width="150px" /> 
+						<!-- Change GM1% static to dynamic -->
+						<Label text="{uiModel>/GM1PLabel}" width="150px" /> 
+					<!-->>End of adding XISAIAHT 17-Nov-23 CHN-2835 -->			
 						<Label text=":" class="sapUiTinyMarginEnd" />
 						<Text id="GM1Perc" text="" />
 					</FlexBox>
@@ -236,7 +237,7 @@
 					<FlexBox alignItems="Start" justifyContent="Start" height="100px">
 						<Label text="{i18n>Remarks}" width="150px" /> 
 						<Label text=":" class="sapUiTinyMarginEnd" />
-						<TextArea id="idRemarksTextArea" value="" height="100px" width="400px"/>
+						<TextArea id="idRemarksTextArea" value="" height="100px" width="400px"  enabled="false"/>
 					</FlexBox>	
 					<!-->>End of adding XISAIAHT 17-Nov-23 CHN-2835 -->
 					
